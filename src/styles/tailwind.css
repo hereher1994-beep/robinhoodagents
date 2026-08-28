@@ -245,6 +245,15 @@
     animation: floatAnim 6s ease-in-out infinite;
   }
 
+  /* Demo credentials banner blink */
+  .demo-blink-banner {
+    animation: demoBannerBlink 1.4s ease-in-out infinite;
+  }
+
+  .demo-badge-blink {
+    animation: demoBadgeBlink 0.9s ease-in-out infinite;
+  }
+
   .shimmer {
     background: linear-gradient(
       90deg,
@@ -339,6 +348,22 @@
     pointer-events: none;
     animation: orbFloat 8s ease-in-out infinite;
   }
+}
+
+@keyframes demoBannerBlink {
+  0%, 100% {
+    box-shadow: 0 0 24px rgba(0,200,5,0.2), inset 0 0 20px rgba(0,200,5,0.04);
+    border-color: rgba(0,200,5,0.45);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0,200,5,0.55), 0 0 80px rgba(0,200,5,0.2), inset 0 0 30px rgba(0,200,5,0.1);
+    border-color: rgba(0,200,5,0.9);
+  }
+}
+
+@keyframes demoBadgeBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
 @keyframes pulseGreen {
