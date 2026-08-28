@@ -100,6 +100,49 @@ export default function AuthPageClient() {
         style={{ background: 'radial-gradient(circle, #3b82f6 0%, transparent 70%)' }} />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 py-8">
+
+        {/* ── BLINKING BETA DEMO CREDENTIALS BANNER ── */}
+        <div className="mb-5 rounded-2xl overflow-hidden demo-blink-banner"
+          style={{
+            background: 'linear-gradient(135deg, rgba(0,200,5,0.12) 0%, rgba(0,168,4,0.08) 100%)',
+            border: '1.5px solid rgba(0,200,5,0.45)',
+            boxShadow: '0 0 24px rgba(0,200,5,0.2), inset 0 0 20px rgba(0,200,5,0.04)',
+          }}>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-5 py-3.5">
+            {/* Left: badge + label */}
+            <div className="flex items-center gap-3">
+              <span className="flex-shrink-0 px-2.5 py-1 rounded-full text-[10px] font-extrabold tracking-widest uppercase demo-badge-blink"
+                style={{ background: 'rgba(0,200,5,0.25)', color: '#00c805', border: '1px solid rgba(0,200,5,0.5)' }}>
+                🔑 Beta Demo
+              </span>
+              <p className="text-sm font-bold text-foreground">
+                Login with demo credentials for beta testing
+              </p>
+            </div>
+
+            {/* Right: credentials + use button */}
+            <div className="flex items-center gap-4 flex-shrink-0">
+              <div className="text-right">
+                <p className="text-xs font-mono text-primary font-semibold number-tabular">robin@robinhoodchain.io</p>
+                <p className="text-xs font-mono text-muted number-tabular">Agent2026!</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => handleUseDemoCredential('robin@robinhoodchain.io', 'Agent2026!')}
+                className="flex-shrink-0 px-4 py-2 rounded-xl text-xs font-extrabold transition-all duration-200 hover:scale-105 active:scale-95"
+                style={{
+                  background: 'linear-gradient(135deg, #00c805, #00a804)',
+                  color: '#000',
+                  boxShadow: '0 0 16px rgba(0,200,5,0.4)',
+                }}
+              >
+                Use Now →
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* ── END BANNER ── */}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl border border-border-bright overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.7)]"
           style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(24px)' }}>
 
